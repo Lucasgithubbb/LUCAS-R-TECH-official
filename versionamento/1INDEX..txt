@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lucas R Tech | Tecnologia e Soluções</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        /* Ajustes específicos para o título e parágrafo solicitados */
+        .hero-title {
+            font-size: 3.2rem !important; /* Diminuído para caber em uma linha */
+            white-space: nowrap; /* Garante que não quebre linha em telas maiores */
+        }
+        .hero-intro p {
+            text-align: justify; /* Alinhamento justificado padrão */
+            hyphens: auto; /* Ajuda a manter o padrão das bordas das linhas */
+        }
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.2rem !important;
+                white-space: normal;
+            }
+        }
+    </style>
+</head>
+<body>
+    <canvas id="bg-canvas"></canvas>
+
+    <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Abrir menu">
+        <span></span><span></span><span></span>
+    </button>
+
+    <nav class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <div class="logo">LUCAS R <span class="tech-span">TECH</span></div>
+            <div style="font-family: var(--font-mono); font-size: 0.6rem; color: var(--text-muted); padding-left: 2px; margin-top: -5px; letter-spacing: 1px;">Cnpj: 64.297.509/0001-20</div>
+            <div class="tagline">
+                <p>Tecnologia da Informação</p>
+                <p>Consultorias</p>
+                <p>Treinamentos</p>
+            </div>
+        </div>
+
+        <div class="nav-container">
+            <div class="nav-group">
+                <span class="nav-group-title">Navegação</span>
+                <ul class="nav-menu">
+                    <li class="nav-item"><a href="#home" class="nav-link active"><span class="nav-icon">🏠</span><span class="nav-text">Início</span></a></li>
+                    <li class="nav-item"><a href="#content" class="nav-link"><span class="nav-icon">📝</span><span class="nav-text">Conteúdos</span></a></li>
+                    <li class="nav-item"><a href="#repositorios" class="nav-link"><span class="nav-icon">📂</span><span class="nav-text">Repositórios</span></a></li>
+                </ul>
+                <span class="nav-group-title">Conectar</span>
+                <ul class="nav-menu">
+                    <li class="nav-item"><a href="#contact" class="nav-link"><span class="nav-icon">✉️</span><span class="nav-text">Contato</span></a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="sidebar-footer">
+            <div class="status-indicator">
+                <span class="status-dot"></span>
+                <span class="status-text">Sistemas Online</span>
+            </div>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <section id="home" class="section hero-section">
+            <div class="hero-container">
+                <div class="hero-badge">Disponível para Consultoria</div>
+                <h1 class="hero-title">Aplique a <span>tecnologia</span> na sua vida</h1>
+                <p class="hero-description">Utilidades tech, Osint e apoio Comercial.</p>
+                <div class="hero-intro" style="margin-top: 2rem; max-width: 650px; color: var(--text-secondary); font-size: 1.15rem; line-height: 1.8; font-family: var(--font-primary);">
+                    <p>Soluções tecnológicas para o cotidiano de pessoas físicas e jurídicas, oferecendo consultoria para empreendedores e disponibilizando um repositório de programas e ferramentas inteligentes que facilitam a rotina e impulsionam resultados.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="content" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Conteúdos Exclusivos</h2>
+                    <p class="section-subtitle">Soluções de tecnologia e utilidades para o seu dia a dia.</p>
+                </div>
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="service-icon">🌐</div>
+                        <h3>Desenvolvimento Seguro</h3>
+                        <p>Web Apps focados em segurança desde o código.</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">🔍</div>
+                        <h3>Inteligência OSINT</h3>
+                        <p>Investigação profunda em fontes abertas.</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">🛡️</div>
+                        <h3>Apoio Comercial</h3>
+                        <p>Consultoria estratégica para pequenos empresários.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="repositorios" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Repositório de Soluções</h2>
+                </div>
+                <div class="courses-grid">
+                    <div class="course-card">
+                        <div class="course-tag">GitHub</div>
+                        <h3>Scripts de Automação</h3>
+                        <button class="btn btn-primary btn-full">Acessar Pasta</button>
+                    </div>
+                    <div class="course-card">
+                        <div class="course-tag">Utilidades</div>
+                        <h3>Ferramentas OSINT</h3>
+                        <button class="btn btn-primary btn-full">Explorar</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="section">
+            <div class="container">
+                <div class="contact-card">
+                    <h2>Inicie sua Jornada</h2>
+                    <form id="contactForm">
+                        <input type="text" class="form-input" placeholder="Seu Nome" required>
+                        <input type="email" class="form-input" placeholder="Seu E-mail" required>
+                        <textarea class="form-input" placeholder="Sua Mensagem" rows="4"></textarea>
+                        <button type="submit" class="btn btn-primary">Enviar Mensagem</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <div class="container">
+                <div class="footer-logo">LUCAS R <span>TECH</span></div>
+                <p>© 2024 Lucas R Tech. Todos os sistemas operacionais.</p>
+            </div>
+        </footer>
+    </main>
+
+    <div class="modal" id="enrollModal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeEnrollModal()">&times;</button>
+            <h3 class="modal-title">Inscrição em: <span id="modalCourseName"></span></h3>
+            <form class="enroll-form">
+                <input type="text" class="form-input" placeholder="Nome Completo" required>
+                <input type="email" class="form-input" placeholder="E-mail" required>
+                <button type="submit" class="btn btn-primary btn-full">Prosseguir para Pagamento</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="js/app.js"></script>
+</body>
+</html>

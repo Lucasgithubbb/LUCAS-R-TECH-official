@@ -1,0 +1,9 @@
+lucas-r-tech/
+├── index.html          ← You have this
+├── css/
+│   └── styles.css      ← You have this
+├── js/
+│   └── app.js          ← JUST CREATED - Copy the JS code above
+├── vercel.json         ← JUST CREATED - For deployment
+└── assets/
+    └── icons/          ← Create this folder for future icons/images

@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lucas R Tech | Hub de Soluções</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        .hero-title {
+            font-size: clamp(1.8rem, 4vw, 2.8rem) !important;
+            white-space: normal;
+            line-height: 1.2;
+            max-width: 800px;
+        }
+        /* Efeito de cores no título conforme solicitado */
+        .text-dim { color: rgba(255, 255, 255, 0.4); } /* Cinza para as palavras secundárias */
+        .text-highlight { color: #ffffff; } /* Branco para as palavras principais */
+
+        @media (max-width: 1024px) {
+            .hero-title { font-size: 2rem !important; }
+        }
+    </style>
+</head>
+<body>
+    <canvas id="bg-canvas"></canvas>
+
+    <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Abrir menu">
+        <span></span><span></span><span></span>
+    </button>
+
+    <nav class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <div class="logo">LUCAS R <span class="tech-span">TECH</span></div>
+            <div style="font-family: var(--font-mono); font-size: 0.6rem; color: var(--text-muted); padding-left: 0,8px; margin-top: -4px; letter-spacing: 0,5px;">Cnpj: 64.297.509/0001-20</div>
+            
+            <div class="tagline">
+                <p>Tecnologia da Informação</p>
+                <p>Consultorias</p>
+                <p>Treinamentos</p>
+            </div>
+        </div>
+
+        <div class="nav-container">
+            <div class="nav-group">
+                <span class="nav-group-title">Navegação</span>
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="#home" class="nav-link active">
+                            <span class="nav-icon">🏠</span>
+                            <span class="nav-text">Início</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#comercial" class="nav-link">
+                            <span class="nav-icon">🚀</span>
+                            <span class="nav-text">Utilidades Comerciais & Web</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#streaming" class="nav-link">
+                            <span class="nav-icon">🎬</span>
+                            <span class="nav-text">Streaming & Mídia</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#games" class="nav-link">
+                            <span class="nav-icon">🎮</span>
+                            <span class="nav-text">Emuladores de Games</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#learning" class="nav-link">
+                            <span class="nav-icon">🧠</span>
+                            <span class="nav-text">Aprendizado</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#tools" class="nav-link">
+                            <span class="nav-icon">🛠️</span>
+                            <span class="nav-text">Ferramentas de Sistema</span>
+                        </a>
+                    </li>
+                </ul>
+                <span class="nav-group-title">Conectar</span>
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="#contact" class="nav-link">
+                            <span class="nav-icon">✉️</span>
+                            <span class="nav-text">Contato</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <section id="home" class="section hero-section">
+            <div class="hero-container">
+                <div class="hero-badge">Disponível para Consultoria</div>
+                <h1 class="hero-title">
+                    <span class="text-highlight">Produtividade</span> <span class="text-dim">de elite.</span> 
+                    <span class="text-dim">Entretenimento</span> <span class="text-highlight">sem limites.</span>
+                </h1>
+                
+                <div class="hero-intro" style="margin-top: 1.2rem; max-width: 650px; color: var(--text-secondary); font-size: 1.1rem; line-height: 1.8; font-family: var(--font-primary);">
+                    <p>Pensando em reunir interesses e ajudar os usuários, aqui eu reuni o "creme de la creme" da internet: ferramentas avançadas para otimizar seu trabalho, inteligência artificial para criar gráficos e documentos, além de um arsenal completo de filmes e jogos. Algumas ferramentas vão funcionar melhor no desktop.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="arsenal-content" class="section">
+            <div class="container">
+                <div class="arsenal-grid">
+                    <div id="comercial" class="expand-card">
+                        <div class="expand-header" onclick="toggleCard(this)">
+                            <div class="expand-icon">🚀</div>
+                            <div class="expand-title">
+                                <h3>Utilidades Comerciais & Web</h3>
+                                <p>IA, Design, Hospedagem e Produtividade.</p>
+                            </div>
+                            <div class="expand-arrow">▼</div>
+                        </div>
+                        <div class="expand-content">
+                            <div class="link-list">
+                                <a href="https://app.napkin.ai" target="_blank" class="link-item"><strong>Napkin AI</strong><span>Transforme textos simples em gráficos visuais explicativos.</span></a>
+                                <a href="https://lightpdf.com/tools" target="_blank" class="link-item"><strong>LightPDF</strong><span>Editor e conversor de PDF avançado online.</span></a>
+                                <a href="https://www.mybib.com/pt/ferramentas/gerador-referencias-abnt" target="_blank" class="link-item"><strong>MyBib (ABNT)</strong><span>Gerador automático de referências bibliográficas.</span></a>
+                                <a href="https://www.pacdora.com" target="_blank" class="link-item"><strong>Pacdora</strong><span>Crie embalagens 3D profissionais online.</span></a>
+                                <a href="https://infinityfree.com" target="_blank" class="link-item"><strong>InfinityFree</strong><span>Hospedagem de sites WordPress gratuita.</span></a>
+                                <a href="https://neapay.com" target="_blank" class="link-item"><strong>Neapay</strong><span>Gere cartões virtuais para testes de sistema.</span></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="streaming" class="expand-card">
+                        <div class="expand-header" onclick="toggleCard(this)">
+                            <div class="expand-icon">🎬</div>
+                            <div class="expand-title">
+                                <h3>Streaming & Multimídia</h3>
+                                <p>Filmes, Torrents, Áudio e Efeitos.</p>
+                            </div>
+                            <div class="expand-arrow">▼</div>
+                        </div>
+                        <div class="expand-content">
+                            <div class="link-list">
+                                <a href="https://deluge-torrent.org/download/" target="_blank" class="link-item"><strong>Deluge</strong><span>Cliente Torrent leve e sem anúncios.</span></a>
+                                <a href="https://gratistorrent.com" target="_blank" class="link-item"><strong>GratisTorrent</strong><span>Acervo de filmes em alta qualidade.</span></a>
+                                <a href="https://streamex.net" target="_blank" class="link-item"><strong>Streamex</strong><span>Plataforma de streaming universal.</span></a>
+                                <a href="https://www.gaiaflix.xyz" target="_blank" class="link-item"><strong>Gaiaflix</strong><span>Catálogo robusto de mídia e entretenimento.</span></a>
+                                <a href="https://www.myinstants.com/pt/index/br/" target="_blank" class="link-item"><strong>MyInstants</strong><span>Botões de efeitos sonoros virais.</span></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="games" class="expand-card">
+                        <div class="expand-header" onclick="toggleCard(this)">
+                            <div class="expand-icon">🎮</div>
+                            <div class="expand-title">
+                                <h3>Emuladores de Games Gratuitos</h3>
+                                <p>Títulos clássicos para jogar no navegador ou PC.</p>
+                            </div>
+                            <div class="expand-arrow">▼</div>
+                        </div>
+                        <div class="expand-content">
+                            <div class="link-list">
+                                <a href="https://romspure.cc" target="_blank" class="link-item"><strong>RomsPure</strong><span>Baixe jogos clássicos para emuladores.</span></a>
+                                <a href="https://myemulator.onl" target="_blank" class="link-item"><strong>My Emulator Online</strong><span>Jogue direto no navegador.</span></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="learning" class="expand-card">
+                        <div class="expand-header" onclick="toggleCard(this)">
+                            <div class="expand-icon">🧠</div>
+                            <div class="expand-title">
+                                <h3>Aprendizado</h3>
+                                <p>Domine a programação com plataformas interativas.</p>
+                            </div>
+                            <div class="expand-arrow">▼</div>
+                        </div>
+                        <div class="expand-content">
+                            <div class="link-list">
+                                <a href="https://codefinity.com/" target="_blank" class="link-item"><strong>Codefinity</strong><span>Cursos práticos de Python e Tech.</span></a>
+                                <a href="https://coddy.tech/onboard" target="_blank" class="link-item"><strong>Coddy.tech</strong><span>Aprenda programação de forma gamificada.</span></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="tools" class="expand-card">
+                        <div class="expand-header" onclick="toggleCard(this)">
+                            <div class="expand-icon">🛠️</div>
+                            <div class="expand-title">
+                                <h3>Ferramentas de Sistema</h3>
+                                <p>Configurações avançadas e manutenção do Windows.</p>
+                            </div>
+                            <div class="expand-arrow">▼</div>
+                        </div>
+                        <div class="expand-content">
+                            <div class="link-list">
+                                <a href="https://github.com/massgravel/Microsoft-Activation-Scripts" target="_blank" class="link-item"><strong>Activation Scripts (MAS)</strong><span>Ativação segura de Windows e Office.</span></a>
+                                <div class="link-item"><strong>GodMode</strong><code>GodMode.{ED7BA470-8E54-465E-825C-99712043E01C}</code></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="section">
+            <div class="container">
+                <div class="contact-card">
+                    <h2 style="margin-bottom: 0.5rem; color: #fff;">Dúvidas ou Sugestões?</h2>
+                    <p style="color: var(--text-secondary); margin-bottom: 2rem; font-size: 0.95rem;">Precisa de ajuda com alguma ferramenta? Envie sua mensagem abaixo.</p>
+                    <form id="contactForm">
+                        <input type="text" class="form-input" placeholder="Seu Nome" required>
+                        <input type="email" class="form-input" placeholder="Seu E-mail" required>
+                        <textarea class="form-input" placeholder="Como posso ajudar?" rows="4"></textarea>
+                        <button type="submit" class="btn btn-primary">Enviar Mensagem</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <div class="container">
+                <div class="footer-logo">LUCAS R <span>TECH</span></div>
+                <p>© 2024 Lucas R Tech. Todos os direitos reservados.</p>
+            </div>
+        </footer>
+    </main>
+
+    <script src="js/app.js"></script>
+</body>
+</html>

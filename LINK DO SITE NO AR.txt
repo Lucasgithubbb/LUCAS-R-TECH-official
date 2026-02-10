@@ -1,0 +1,7 @@
+https://ubiquitous-mochi-4df754.netlify.app
+
+atualizado para: 
+
+Meu site: https://lucas-r-tech.netlify.app
+
+site do servidor: https://app.netlify.com/projects/lucas-r-tech/configuration/general

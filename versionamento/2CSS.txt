@@ -1,0 +1,214 @@
+/* ============================================
+   LUCAS R TECH - CONSULTORIA CYBER TECH
+   Estilo Sênior: Dark Mode, Partículas e Glassmorphism
+   ============================================ */
+
+:root {
+    --bg-primary: #0a0a0a;
+    --bg-secondary: #111111;
+    --bg-card: rgba(22, 22, 22, 0.7);
+    --bg-hover: rgba(30, 30, 30, 0.8);
+    --border-color: rgba(255, 255, 255, 0.15);
+    --border-hover: rgba(255, 255, 255, 0.4);
+    --text-primary: #ffffff;
+    --text-secondary: rgba(255, 255, 255, 0.7);
+    --text-muted: rgba(255, 255, 255, 0.4);
+    --font-primary: 'Inter', sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+    --sidebar-width: 280px;
+    --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* 1. FUNDO ANIMADO */
+#bg-canvas {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    z-index: -1;
+    background: radial-gradient(circle at center, #0f0f0f 0%, #000000 100%);
+    pointer-events: none;
+}
+
+/* RESET */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    font-family: var(--font-primary);
+    overflow-x: hidden;
+    line-height: 1.6;
+}
+
+/* 2. SIDEBAR - VOLTANDO AO ESTILO ORIGINAL */
+.sidebar {
+    position: fixed;
+    top: 0; left: 0;
+    width: var(--sidebar-width);
+    height: 100vh;
+    background: rgba(17, 17, 17, 0.95);
+    backdrop-filter: blur(15px);
+    border-right: 1px solid var(--border-color);
+    display: flex;
+    flex-direction: column;
+    z-index: 1000;
+}
+
+.sidebar-header {
+    padding: 2.5rem 2rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 800;
+    letter-spacing: -1px;
+    white-space: nowrap; /* Garante uma linha só */
+}
+
+/* ESTILO DO CNPJ NA SIDEBAR */
+.sidebar-header div[style*="font-family: var(--font-mono)"] {
+    transition: var(--transition);
+    opacity: 0.8;
+}
+
+.sidebar-header:hover div[style*="font-family: var(--font-mono)"] {
+    color: var(--text-primary) !important;
+    opacity: 1;
+}
+
+.tech-span { color: var(--text-muted); font-weight: 400; }
+
+.tagline {
+    margin-top: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.tagline p {
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    padding-left: 12px;
+    border-left: 1px solid var(--border-color);
+}
+
+/* NAVEGAÇÃO ESTILIZADA */
+.nav-container { flex: 1; padding: 2rem 1.5rem; }
+.nav-group-title {
+    display: block;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 1rem;
+    letter-spacing: 2px;
+}
+
+.nav-link {
+    display: flex;
+    align-items: center;
+    padding: 0.8rem 1rem;
+    color: var(--text-secondary);
+    text-decoration: none;
+    border-radius: 4px;
+    transition: var(--transition);
+    margin-bottom: 0.5rem;
+    font-family: var(--font-mono); /* Fonte técnica no menu */
+    font-size: 0.85rem;
+}
+
+.nav-link:hover, .nav-link.active {
+    background: var(--bg-hover);
+    color: var(--text-primary);
+    border: 1px solid var(--border-color);
+}
+
+.nav-icon { margin-right: 12px; font-size: 1.1rem; }
+
+/* 3. CONTEÚDO E CARDS */
+.main-content {
+    margin-left: var(--sidebar-width);
+    position: relative;
+    z-index: 1;
+}
+
+.section {
+    padding: 4rem 4rem; /* Espaçamento reduzido para evitar rolagem infinita */
+}
+
+.container { max-width: 1100px; margin: 0 auto; }
+
+
+.hero-title {
+    font-size: 3.2rem; /* Reduzido de 4rem para evitar a quebra [cite: 23] */
+    font-weight: 800;
+    line-height: 1.1;
+    white-space: nowrap; /* Impede a quebra de linha em telas grandes */
+}
+.hero-title span { color: var(--text-muted); }
+
+
+
+/* ESTILO DA INTRODUÇÃO GERAL */
+.hero-intro p {
+    text-align: justify; /* Garante que o início e o fim das linhas estejam alinhados [cite: 25] */
+    line-height: 1.8;
+    color: var(--text-secondary);
+    border-left: 2px solid var(--border-color); /* Mantém o detalhe elegante à esquerda [cite: 25] */
+    padding-left: 1.5rem;
+    margin-top: 1rem;
+    hyphens: auto; /* Melhora o ajuste das palavras nas bordas */
+}
+
+/* CARDS PREMIUM (GLASSMORPHISM) */
+.service-card, .course-card, .contact-card {
+    background: var(--bg-card);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--border-color);
+    padding: 2.5rem;
+    transition: var(--transition);
+    border-radius: 2px; /* Visual mais quadrado e técnico */
+}
+
+.service-card:hover, .course-card:hover {
+    border-color: var(--border-hover);
+    transform: translateY(-5px);
+    background: rgba(30, 30, 30, 0.4);
+}
+
+/* BOTÕES */
+.btn {
+    padding: 0.9rem 2.2rem;
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-block;
+    transition: var(--transition);
+    font-family: var(--font-primary);
+    cursor: pointer;
+}
+.btn-primary { background: white; color: black; }
+.btn-outline { background: transparent; color: white; border: 1px solid var(--border-color); }
+
+/* MODAL CENTRALIZADO */
+.modal {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.9); display: none;
+    align-items: center; justify-content: center; z-index: 2000;
+}
+.modal.active { display: flex; }
+.modal-content {
+    background: var(--bg-secondary); padding: 3rem;
+    border: 1px solid var(--border-color); width: 90%; max-width: 500px;
+    position: relative;
+}
+
+/* MOBILE */
+@media (max-width: 1024px) {
+    .hero-title {
+        font-size: 2.2rem;
+        white-space: normal; /* Permite quebrar linha apenas no celular para não sumir */
+    }
+}
