@@ -2,13 +2,13 @@ document.addEventListener('DOMContentLoaded', () => {
     initBackground(); // Inicia a animação laser aprimorada
     initMobileMenu();
     initSidebarLogic();
+    initFormSubmission(); // Inicializa o envio do formulário
 });
 
 function toggleCard(header) {
     const card = header.parentElement;
     const content = card.querySelector('.expand-content');
     const isOpen = card.classList.contains('open');
-
     if (!isOpen) {
         card.classList.add('open');
         content.style.maxHeight = content.scrollHeight + "px";
@@ -45,6 +45,34 @@ function initMobileMenu() {
     if(btn) btn.addEventListener('click', () => sidebar.classList.toggle('active'));
 }
 
+// NOVA FUNÇÃO PARA ENVIAR O FORMULÁRIO E MOSTRAR O AVISO
+function initFormSubmission() {
+    const form = document.getElementById("contactForm");
+    if (!form) return;
+
+    form.addEventListener("submit", async function(event) {
+        event.preventDefault();
+        const data = new FormData(event.target);
+        
+        fetch(event.target.action, {
+            method: form.method,
+            body: data,
+            headers: {
+                'Accept': 'application/json'
+            }
+        }).then(response => {
+            if (response.ok) {
+                alert("Mensagem enviada com sucesso!"); // A caixinha de aviso
+                form.reset();
+            } else {
+                alert("Ocorreu um erro ao enviar. Verifique se o código do Formspree está correto.");
+            }
+        }).catch(error => {
+            alert("Ocorreu um erro de conexão.");
+        });
+    });
+}
+
 /* Alteração 6: Animação Laser/Geométrica mais visível */
 function initBackground() {
     const canvas = document.getElementById('bg-canvas');
@@ -58,7 +86,6 @@ function initBackground() {
     }
     window.addEventListener('resize', resize);
     resize();
-
     class Particle {
         constructor() {
             this.x = Math.random() * canvas.width;
@@ -73,7 +100,8 @@ function initBackground() {
             if (this.y > canvas.height) this.y = 0; else if (this.y < 0) this.y = canvas.height;
         }
         draw() {
-            ctx.fillStyle = 'rgba(255, 255, 255, 0.5)'; // Partículas mais visíveis
+            ctx.fillStyle = 'rgba(255, 255, 255, 0.5)';
+            // Partículas mais visíveis
             ctx.beginPath();
             ctx.arc(this.x, this.y, 1.2, 0, Math.PI * 2);
             ctx.fill();
@@ -86,7 +114,6 @@ function initBackground() {
 
     function animate() {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
-        
         for (let i = 0; i < particles.length; i++) {
             particles[i].update();
             particles[i].draw();
@@ -95,12 +122,11 @@ function initBackground() {
                 const dx = particles[i].x - particles[j].x;
                 const dy = particles[i].y - particles[j].y;
                 const distance = Math.sqrt(dx * dx + dy * dy);
-
                 // Alteração: Aumentada a distância e opacidade das linhas laser
                 if (distance < 150) { 
                     ctx.beginPath();
                     // Cor da linha laser ajustada para aparecer melhor
-                    ctx.strokeStyle = `rgba(255, 255, 255, ${0.15 - distance/1000})`; 
+                    ctx.strokeStyle = `rgba(255, 255, 255, ${0.15 - distance/1000})`;
                     ctx.lineWidth = 0.6;
                     ctx.moveTo(particles[i].x, particles[i].y);
                     ctx.lineTo(particles[j].x, particles[j].y);

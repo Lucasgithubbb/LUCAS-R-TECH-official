@@ -215,10 +215,10 @@
                 <div class="contact-card">
                     <h2 style="margin-bottom: 0.5rem; color: #fff;">Dúvidas ou Sugestões?</h2>
                     <p style="color: var(--text-secondary); margin-bottom: 2rem; font-size: 0.95rem;">Precisa de ajuda com alguma ferramenta? Envie sua mensagem abaixo.</p>
-                    <form id="contactForm">
-                        <input type="text" class="form-input" placeholder="Seu Nome" required>
-                        <input type="email" class="form-input" placeholder="Seu E-mail" required>
-                        <textarea class="form-input" placeholder="Como posso ajudar?" rows="4"></textarea>
+                    <form id="contactForm" action="https://formspree.io/f/xvzbgwzp" method="POST">
+                        <input type="text" name="name" class="form-input" placeholder="Seu Nome" required>
+                        <input type="email" name="email" class="form-input" placeholder="Seu E-mail" required>
+                        <textarea name="message" class="form-input" placeholder="Como posso ajudar?" rows="4" required></textarea>
                         <button type="submit" class="btn btn-primary">Enviar Mensagem</button>
                     </form>
                 </div>
@@ -228,7 +228,7 @@
         <footer class="footer">
             <div class="container">
                 <div class="footer-logo">LUCAS R <span>TECH</span></div>
-                <p>© 2024 Lucas R Tech. Todos os direitos reservados.</p>
+                <p>© 2026 Lucas R Tech. Todos os direitos reservados.</p>
             </div>
         </footer>
     </main>

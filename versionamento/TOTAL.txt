@@ -1,4 +1,4 @@
-html: 
+INDEX HTML: 
 
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -239,8 +239,7 @@ html:
 </body>
 </html>
 
-
-CSS: 
+CSS:
 
 /* ============================================
    LUCAS R TECH - CSS FINAL REVISADO
@@ -400,7 +399,8 @@ body {
 }
 
 
-APP.JS: 
+APP.JS:
+
 
 document.addEventListener('DOMContentLoaded', () => {
     initBackground(); // Inicia a animação laser aprimorada
