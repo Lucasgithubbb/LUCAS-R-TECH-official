@@ -1,8 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
-    initBackground(); // Inicia a animação laser aprimorada
+    initBackground(); 
     initMobileMenu();
     initSidebarLogic();
-    initFormSubmission(); // Inicializa o envio do formulário
+    initFormSubmission(); 
 });
 
 function toggleCard(header) {
@@ -45,7 +45,7 @@ function initMobileMenu() {
     if(btn) btn.addEventListener('click', () => sidebar.classList.toggle('active'));
 }
 
-// NOVA FUNÇÃO PARA ENVIAR O FORMULÁRIO E MOSTRAR O AVISO
+
 function initFormSubmission() {
     const form = document.getElementById("contactForm");
     if (!form) return;
@@ -62,7 +62,7 @@ function initFormSubmission() {
             }
         }).then(response => {
             if (response.ok) {
-                alert("Mensagem enviada com sucesso!"); // A caixinha de aviso
+                alert("Mensagem enviada com sucesso!"); 
                 form.reset();
             } else {
                 alert("Ocorreu um erro ao enviar. Verifique se o código do Formspree está correto.");
@@ -73,7 +73,7 @@ function initFormSubmission() {
     });
 }
 
-/* Alteração 6: Animação Laser/Geométrica mais visível */
+
 function initBackground() {
     const canvas = document.getElementById('bg-canvas');
     if(!canvas) return;
@@ -122,10 +122,10 @@ function initBackground() {
                 const dx = particles[i].x - particles[j].x;
                 const dy = particles[i].y - particles[j].y;
                 const distance = Math.sqrt(dx * dx + dy * dy);
-                // Alteração: Aumentada a distância e opacidade das linhas laser
+          
                 if (distance < 150) { 
                     ctx.beginPath();
-                    // Cor da linha laser ajustada para aparecer melhor
+        
                     ctx.strokeStyle = `rgba(255, 255, 255, ${0.15 - distance/1000})`;
                     ctx.lineWidth = 0.6;
                     ctx.moveTo(particles[i].x, particles[i].y);
