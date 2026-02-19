@@ -1,0 +1,9 @@
+1. Salvar as alterações localmente
+Bash:
+git add .
+git commit -m "Fix: endpoint Formspree e script de feedback de contato"
+
+
+2. Enviar para o GitHub
+Bash:
+git push origin main

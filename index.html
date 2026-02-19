@@ -22,6 +22,12 @@
         @media (max-width: 1024px) {
             .hero-title { font-size: 2rem !important; }
         }
+
+        /* Primeira letra dos títulos na sidebar em vermelho estiloso */
+        .nav-text::first-letter {
+            color: #e63946;
+            font-weight: 700;
+        }
     </style>
 </head>
 <body>
@@ -49,38 +55,38 @@
                 <ul class="nav-menu">
                     <li class="nav-item">
                         <a href="#home" class="nav-link active">
-                            <span class="nav-icon">🏠</span>
+                            <span class="nav-icon"></span>
                             <span class="nav-text">Início</span>
                         </a>
                     </li>
                     <li class="nav-item">
                         <a href="#comercial" class="nav-link">
-                            <span class="nav-icon">🚀</span>
+                            <span class="nav-icon"></span>
                             <span class="nav-text">Utilidades Comerciais & Web</span>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="#streaming" class="nav-link">
-                            <span class="nav-icon">🎬</span>
-                            <span class="nav-text">Streaming & Mídia</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#games" class="nav-link">
-                            <span class="nav-icon">🎮</span>
-                            <span class="nav-text">Emuladores de Games</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
                         <a href="#learning" class="nav-link">
-                            <span class="nav-icon">🧠</span>
+                            <span class="nav-icon"></span>
                             <span class="nav-text">Aprendizado</span>
                         </a>
                     </li>
                     <li class="nav-item">
                         <a href="#tools" class="nav-link">
-                            <span class="nav-icon">🛠️</span>
+                            <span class="nav-icon"></span>
                             <span class="nav-text">Ferramentas de Sistema</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#streaming" class="nav-link">
+                            <span class="nav-icon"></span>
+                            <span class="nav-text">Streaming & Mídia</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#games" class="nav-link">
+                            <span class="nav-icon"></span>
+                            <span class="nav-text">Emuladores de Games</span>
                         </a>
                     </li>
                 </ul>
@@ -88,7 +94,7 @@
                 <ul class="nav-menu">
                     <li class="nav-item">
                         <a href="#contact" class="nav-link">
-                            <span class="nav-icon">✉️</span>
+                            <span class="nav-icon"></span>
                             <span class="nav-text">Contato</span>
                         </a>
                     </li>
@@ -117,7 +123,7 @@
                 <div class="arsenal-grid">
                     <div id="comercial" class="expand-card">
                         <div class="expand-header" onclick="toggleCard(this)">
-                            <div class="expand-icon">🚀</div>
+                            <div class="expand-icon"></div>
                             <div class="expand-title">
                                 <h3>Utilidades Comerciais & Web</h3>
                                 <p>IA, Design, Hospedagem e Produtividade.</p>
@@ -132,13 +138,52 @@
                                 <a href="https://www.pacdora.com" target="_blank" class="link-item"><strong>Pacdora</strong><span>Crie embalagens 3D profissionais online.</span></a>
                                 <a href="https://infinityfree.com" target="_blank" class="link-item"><strong>InfinityFree</strong><span>Hospedagem de sites WordPress gratuita.</span></a>
                                 <a href="https://neapay.com" target="_blank" class="link-item"><strong>Neapay</strong><span>Gere cartões virtuais para testes de sistema.</span></a>
+                                <a href="https://imageeditor.online" target="_blank" class="link-item"><strong>ImageEditor.Online</strong><span>Edição de imagem com IA.</span></a>
+                                <a href="https://tinywow.com" target="_blank" class="link-item"><strong>TinyWow</strong><span>Várias ferramentas úteis online.</span></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="learning" class="expand-card">
+                        <div class="expand-header" onclick="toggleCard(this)">
+                            <div class="expand-icon"></div>
+                            <div class="expand-title">
+                                <h3>Aprendizado</h3>
+                                <p>Domine a programação com plataformas interativas.</p>
+                            </div>
+                            <div class="expand-arrow">▼</div>
+                        </div>
+                        <div class="expand-content">
+                            <div class="link-list">
+                                <a href="https://codefinity.com/" target="_blank" class="link-item"><strong>Codefinity</strong><span>Cursos práticos de Python e Tech.</span></a>
+                                <a href="https://coddy.tech/onboard" target="_blank" class="link-item"><strong>Coddy.tech</strong><span>Aprenda programação de forma gamificada.</span></a>
+                                <a href="https://github.com/BrasilAPI/BrasilAPI" target="_blank" class="link-item"><strong>BrasilAPI</strong><span>Repositório com APIs brasileiras.</span></a>
+                                <a href="https://github.com/Wmitrut/awesome-brazilian-devblogs" target="_blank" class="link-item"><strong>Awesome Brazilian DevBlogs</strong><span>Blogs técnicos brasileiros.</span></a>
+                                <a href="https://github.com/brazilian-utils" target="_blank" class="link-item"><strong>Brazilian Utils</strong><span>Bibliotecas e utilitários brasileiros.</span></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="tools" class="expand-card">
+                        <div class="expand-header" onclick="toggleCard(this)">
+                            <div class="expand-icon"></div>
+                            <div class="expand-title">
+                                <h3>Ferramentas de Sistema</h3>
+                                <p>Configurações avançadas e manutenção do Windows.</p>
+                            </div>
+                            <div class="expand-arrow">▼</div>
+                        </div>
+                        <div class="expand-content">
+                            <div class="link-list">
+                                <a href="https://github.com/massgravel/Microsoft-Activation-Scripts" target="_blank" class="link-item"><strong>Activation Scripts (MAS)</strong><span>Ativação segura de Windows e Office.</span></a>
+                                <div class="link-item"><strong>GodMode</strong><code>GodMode.{ED7BA470-8E54-465E-825C-99712043E01C}</code></div>
                             </div>
                         </div>
                     </div>
 
                     <div id="streaming" class="expand-card">
                         <div class="expand-header" onclick="toggleCard(this)">
-                            <div class="expand-icon">🎬</div>
+                            <div class="expand-icon"></div>
                             <div class="expand-title">
                                 <h3>Streaming & Multimídia</h3>
                                 <p>Filmes, Torrents, Áudio e Efeitos.</p>
@@ -158,7 +203,7 @@
 
                     <div id="games" class="expand-card">
                         <div class="expand-header" onclick="toggleCard(this)">
-                            <div class="expand-icon">🎮</div>
+                            <div class="expand-icon"></div>
                             <div class="expand-title">
                                 <h3>Emuladores de Games Gratuitos</h3>
                                 <p>Títulos clássicos para jogar no navegador ou PC.</p>
@@ -172,58 +217,24 @@
                             </div>
                         </div>
                     </div>
-
-                    <div id="learning" class="expand-card">
-                        <div class="expand-header" onclick="toggleCard(this)">
-                            <div class="expand-icon">🧠</div>
-                            <div class="expand-title">
-                                <h3>Aprendizado</h3>
-                                <p>Domine a programação com plataformas interativas.</p>
-                            </div>
-                            <div class="expand-arrow">▼</div>
-                        </div>
-                        <div class="expand-content">
-                            <div class="link-list">
-                                <a href="https://codefinity.com/" target="_blank" class="link-item"><strong>Codefinity</strong><span>Cursos práticos de Python e Tech.</span></a>
-                                <a href="https://coddy.tech/onboard" target="_blank" class="link-item"><strong>Coddy.tech</strong><span>Aprenda programação de forma gamificada.</span></a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div id="tools" class="expand-card">
-                        <div class="expand-header" onclick="toggleCard(this)">
-                            <div class="expand-icon">🛠️</div>
-                            <div class="expand-title">
-                                <h3>Ferramentas de Sistema</h3>
-                                <p>Configurações avançadas e manutenção do Windows.</p>
-                            </div>
-                            <div class="expand-arrow">▼</div>
-                        </div>
-                        <div class="expand-content">
-                            <div class="link-list">
-                                <a href="https://github.com/massgravel/Microsoft-Activation-Scripts" target="_blank" class="link-item"><strong>Activation Scripts (MAS)</strong><span>Ativação segura de Windows e Office.</span></a>
-                                <div class="link-item"><strong>GodMode</strong><code>GodMode.{ED7BA470-8E54-465E-825C-99712043E01C}</code></div>
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
         </section>
 
-        <section id="contact" class="section">
-            <div class="container">
-                <div class="contact-card">
-                    <h2 style="margin-bottom: 0.5rem; color: #fff;">Dúvidas ou Sugestões?</h2>
-                    <p style="color: var(--text-secondary); margin-bottom: 2rem; font-size: 0.95rem;">Precisa de ajuda com alguma ferramenta? Envie sua mensagem abaixo.</p>
-                    <form id="contactForm" action="https://formspree.io/f/xvzbgwzp" method="POST">
-                        <input type="text" name="name" class="form-input" placeholder="Seu Nome" required>
-                        <input type="email" name="email" class="form-input" placeholder="Seu E-mail" required>
-                        <textarea name="message" class="form-input" placeholder="Como posso ajudar?" rows="4" required></textarea>
-                        <button type="submit" class="btn btn-primary">Enviar Mensagem</button>
-                    </form>
-                </div>
-            </div>
-        </section>
+<section id="contact" class="section">
+    <div class="container">
+        <div class="contact-card">
+            <h2 style="margin-bottom: 0.5rem; color: #fff;">Dúvidas ou Sugestões?</h2>
+            <p style="color: var(--text-secondary); margin-bottom: 2rem; font-size: 0.95rem;">Precisa de ajuda com alguma ferramenta? Envie sua mensagem abaixo.</p>
+            <form id="contactForm" action="https://formspree.io/f/xvzbgwzp" method="POST">
+                <input type="text" name="nome" class="form-input" placeholder="Seu Nome" required>
+                <input type="email" name="email" class="form-input" placeholder="Seu E-mail" required>
+                <textarea name="mensagem" class="form-input" placeholder="Como posso ajudar?" rows="4" required></textarea>
+                <button type="submit" class="btn btn-primary">Enviar Mensagem</button>
+            </form>
+        </div>
+    </div>
+</section>
 
         <footer class="footer">
             <div class="container">

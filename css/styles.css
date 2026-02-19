@@ -61,15 +61,13 @@ body {
 .nav-container { flex: 1; padding: 2rem 1rem; overflow-y: auto; }
 
 .nav-group-title {
-    display: block;
-    font-size: 0.75rem; text-transform: uppercase;
+    display: block; font-size: 0.75rem; text-transform: uppercase;
     color: var(--text-muted); margin: 1.5rem 0 0.5rem 1.5rem;
     font-weight: 600;
 }
 
 .nav-link {
-    display: flex;
-    align-items: center; padding: 0.8rem 1.5rem;
+    display: flex; align-items: center; padding: 0.8rem 1.5rem;
     color: rgba(255, 255, 255, 0.7); text-decoration: none;
     border-radius: 6px; transition: var(--transition);
 }
@@ -111,8 +109,7 @@ body {
 
 .link-item {
     padding: 1.2rem; background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(255, 255, 255, 0.05);
-    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.05); border-radius: 8px;
     text-decoration: none; transition: 0.3s;
 }
 
@@ -125,14 +122,12 @@ body {
     background: var(--bg-card);
     backdrop-filter: blur(20px);
     border: 1px solid var(--border-color);
-    padding: 3rem;
-    border-radius: 15px;
+    padding: 3rem; border-radius: 15px;
 }
 
 .form-input {
     width: 100%; padding: 1rem; margin-bottom: 1rem;
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid var(--border-color);
+    background: rgba(255, 255, 255, 0.05); border: 1px solid var(--border-color);
     border-radius: 8px; color: #fff; font-size: 1rem;
 }
 
@@ -140,8 +135,7 @@ body {
 
 .btn-primary {
     background: #fff; color: #000; font-weight: 700; padding: 1rem 2.5rem;
-    border: none; border-radius: 8px; cursor: pointer;
-    transition: 0.3s;
+    border: none; border-radius: 8px; cursor: pointer; transition: 0.3s;
 }
 
 .btn-primary:hover { transform: scale(1.02); box-shadow: 0 5px 15px rgba(255,255,255,0.1); }
@@ -155,9 +149,14 @@ body {
     .sidebar.active { transform: translateX(0); }
     .main-content { margin-left: 0; }
     .mobile-menu-btn { 
-        display: block; position: fixed; top: 1.2rem;
-        right: 1.2rem; z-index: 2000;
+        display: block; position: fixed; top: 1.2rem; right: 1.2rem; z-index: 2000;
         background: #111; border: 1px solid #333; padding: 8px; border-radius: 5px;
     }
     .mobile-menu-btn span { display: block; width: 22px; height: 2px; background: #fff; margin: 4px 0; }
+}
+
+/* Primeira letra dos títulos na sidebar em vermelho estiloso */
+.nav-text::first-letter {
+    color: #e63946;
+    font-weight: 700;
 }

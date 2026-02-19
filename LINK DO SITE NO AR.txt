@@ -5,3 +5,28 @@ atualizado para:
 Meu site: https://lucas-r-tech.netlify.app
 
 site do servidor: https://app.netlify.com/projects/lucas-r-tech/configuration/general
+
+
+
+Agora vamos partir para novas atualizações no meu site. 
+
+1- Quero remover todos os emojis de texto no site. 
+2- Invés de emoji, quero que você mude a cor da primeira letra de cada titulo na barra lateral esquerda. Pode ser um vemelho que não fique muito fluorescente. 
+3- Quero mudar a ordem dos cards na aba lateral esquerda e consequentemente na página também. 
+Quero que Emudalores de games seja a última coisa a ser a presentada e Streaming & e mídia, a penultima. 
+
+
+4- agora vamos colocar mais alguns links no site em suas respectivas categorias com uma breve introdução, do mesmo jeito que ja esta acontecendo no restante do site.
+
+links que estão abaixo:
+
+https://imageeditor.online (edição de imagem com IA)
+
+tinywow.com (varias ferramentas)
+
+Repositórios GitHub BR com APIS, Blogs Técnicos e Bibliotecas:
+https://github.com/BrasilAPI/BrasilAPI, https://github.com/Wmitrut/awesome-brazilian-devblogs, https://github.com/brazilian-utils
+
+
+
+
