@@ -1,6 +1,4 @@
-/* ============================================
-   LUCAS R TECH - CSS FINAL REVISADO
-   ============================================ */
+
 
 :root {
     --bg-primary: #0a0a0a;
@@ -34,7 +32,7 @@ body {
     background: #000000;
 }
 
-/* SIDEBAR */
+
 .sidebar {
     position: fixed;
     top: 0; left: 0;
@@ -78,14 +76,14 @@ body {
 
 .nav-icon { margin-right: 12px; font-size: 1.1rem; }
 
-/* MAIN CONTENT */
+
 .main-content { margin-left: var(--sidebar-width); }
 .section { padding: 4rem 2rem; max-width: 1100px; margin: 0 auto; }
 
-/* Alteração 4: Aproximação do conteúdo ao título */
+
 .arsenal-grid { margin-top: 1.5rem; display: flex; flex-direction: column; gap: 1.2rem; }
 
-/* CARDS */
+
 .expand-card {
     background: var(--bg-card);
     backdrop-filter: blur(20px);
@@ -117,7 +115,7 @@ body {
 .link-item strong { display: block; color: #fff; margin-bottom: 4px; }
 .link-item span { font-size: 0.9rem; color: rgba(255,255,255,0.7); line-height: 1.4; }
 
-/* FORMULÁRIO DE CONTATO */
+
 .contact-card {
     background: var(--bg-card);
     backdrop-filter: blur(20px);
@@ -140,10 +138,10 @@ body {
 
 .btn-primary:hover { transform: scale(1.02); box-shadow: 0 5px 15px rgba(255,255,255,0.1); }
 
-/* FOOTER */
+
 .footer { padding: 4rem 2rem; text-align: center; opacity: 0.6; }
 
-/* MOBILE */
+
 @media (max-width: 1024px) {
     .sidebar { transform: translateX(-100%); transition: 0.3s; }
     .sidebar.active { transform: translateX(0); }
@@ -153,10 +151,4 @@ body {
         background: #111; border: 1px solid #333; padding: 8px; border-radius: 5px;
     }
     .mobile-menu-btn span { display: block; width: 22px; height: 2px; background: #fff; margin: 4px 0; }
-}
-
-/* Primeira letra dos títulos na sidebar em vermelho estiloso */
-.nav-text::first-letter {
-    color: #e63946;
-    font-weight: 700;
 }
