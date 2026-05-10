@@ -2,13 +2,21 @@ document.addEventListener('DOMContentLoaded', () => {
     initBackground(); 
     initMobileMenu();
     initSidebarLogic();
-    initFormSubmission(); // Inicializa o envio do formulário
+    initFormSubmission();
 });
 
 function toggleCard(header) {
     const card = header.parentElement;
     const content = card.querySelector('.expand-content');
     const isOpen = card.classList.contains('open');
+
+    // Comportamento do Accordion (opcional: fecha os outros abertos para manter a tela limpa)
+    document.querySelectorAll('.expand-card.open').forEach(openCard => {
+        if (openCard !== card) {
+            openCard.classList.remove('open');
+            openCard.querySelector('.expand-content').style.maxHeight = null;
+        }
+    });
 
     if (!isOpen) {
         card.classList.add('open');
@@ -22,18 +30,21 @@ function toggleCard(header) {
 function initSidebarLogic() {
     const links = document.querySelectorAll('.nav-link');
     links.forEach(link => {
-        link.addEventListener('click', () => {
+        link.addEventListener('click', (e) => {
+            // Evita a remoção da classe ativa em telas muito pequenas se não for âncora
             links.forEach(l => l.classList.remove('active'));
             link.classList.add('active');
             
             const targetId = link.getAttribute('href').substring(1);
             const targetCard = document.getElementById(targetId);
             
-            if(targetCard && !targetCard.classList.contains('open')) {
+            // Se o alvo for um card e não estiver aberto, abra-o
+            if (targetCard && targetCard.classList.contains('expand-card') && !targetCard.classList.contains('open')) {
                 toggleCard(targetCard.querySelector('.expand-header'));
             }
 
-            if(window.innerWidth <= 1024) {
+            // Esconde menu no mobile após o clique
+            if (window.innerWidth <= 1024) {
                 document.getElementById('sidebar').classList.remove('active');
             }
         });
@@ -43,10 +54,13 @@ function initSidebarLogic() {
 function initMobileMenu() {
     const btn = document.getElementById('mobileMenuBtn');
     const sidebar = document.getElementById('sidebar');
-    if(btn) btn.addEventListener('click', () => sidebar.classList.toggle('active'));
+    if (btn && sidebar) {
+        btn.addEventListener('click', () => {
+            sidebar.classList.toggle('active');
+        });
+    }
 }
 
-// NOVA FUNÇÃO PARA ENVIAR O FORMULÁRIO E MOSTRAR O AVISO
 function initFormSubmission() {
     const form = document.getElementById("contactForm");
     if (!form) return;
@@ -55,6 +69,12 @@ function initFormSubmission() {
         event.preventDefault();
         const data = new FormData(event.target);
         
+        // Altera o texto do botão para indicar carregamento
+        const submitBtn = form.querySelector('button[type="submit"]');
+        const originalBtnText = submitBtn.textContent;
+        submitBtn.textContent = "Transmitindo...";
+        submitBtn.disabled = true;
+
         fetch(event.target.action, {
             method: form.method,
             body: data,
@@ -63,21 +83,23 @@ function initFormSubmission() {
             }
         }).then(response => {
             if (response.ok) {
-                alert("Mensagem enviada com sucesso!"); // A caixinha de aviso
+                alert("Mensagem recebida nos servidores com sucesso. Retornaremos em breve."); 
                 form.reset();
             } else {
-                alert("Ocorreu um erro ao enviar. Verifique se o código do Formspree está correto.");
+                alert("Falha na transmissão. Verifique a configuração do endpoint.");
             }
         }).catch(error => {
-            alert("Ocorreu um erro de conexão.");
+            alert("Erro de conexão de rede.");
+        }).finally(() => {
+            submitBtn.textContent = originalBtnText;
+            submitBtn.disabled = false;
         });
     });
 }
 
-
 function initBackground() {
     const canvas = document.getElementById('bg-canvas');
-    if(!canvas) return;
+    if (!canvas) return;
     const ctx = canvas.getContext('2d');
     let particles = [];
 
@@ -85,6 +107,7 @@ function initBackground() {
         canvas.width = window.innerWidth;
         canvas.height = window.innerHeight;
     }
+    
     window.addEventListener('resize', resize);
     resize();
 
@@ -92,8 +115,8 @@ function initBackground() {
         constructor() {
             this.x = Math.random() * canvas.width;
             this.y = Math.random() * canvas.height;
-            this.speedX = (Math.random() - 0.5) * 0.5;
-            this.speedY = (Math.random() - 0.5) * 0.5;
+            this.speedX = (Math.random() - 0.5) * 0.4;
+            this.speedY = (Math.random() - 0.5) * 0.4;
         }
         update() {
             this.x += this.speedX;
@@ -102,14 +125,17 @@ function initBackground() {
             if (this.y > canvas.height) this.y = 0; else if (this.y < 0) this.y = canvas.height;
         }
         draw() {
-            ctx.fillStyle = 'rgba(255, 255, 255, 0.5)'; // Partículas mais visíveis
+            ctx.fillStyle = 'rgba(255, 255, 255, 0.4)'; 
             ctx.beginPath();
             ctx.arc(this.x, this.y, 1.2, 0, Math.PI * 2);
             ctx.fill();
         }
     }
 
-    for (let i = 0; i < 90; i++) {
+    // Adaptabilidade: Menos partículas em telas menores para melhor performance
+    const particleCount = window.innerWidth < 768 ? 50 : 100;
+
+    for (let i = 0; i < particleCount; i++) {
         particles.push(new Particle());
     }
 
@@ -124,12 +150,12 @@ function initBackground() {
                 const dx = particles[i].x - particles[j].x;
                 const dy = particles[i].y - particles[j].y;
                 const distance = Math.sqrt(dx * dx + dy * dy);
-                // Alteração: Aumentada a distância e opacidade das linhas laser
-                if (distance < 150) { 
+                
+                // Distância otimizada para conexões fluídas
+                if (distance < 130) { 
                     ctx.beginPath();
-                    // Cor da linha laser ajustada para aparecer melhor
-                    ctx.strokeStyle = `rgba(255, 255, 255, ${0.15 - distance/1000})`;
-                    ctx.lineWidth = 0.6;
+                    ctx.strokeStyle = `rgba(255, 255, 255, ${0.12 - distance / 1000})`;
+                    ctx.lineWidth = 0.5;
                     ctx.moveTo(particles[i].x, particles[i].y);
                     ctx.lineTo(particles[j].x, particles[j].y);
                     ctx.stroke();

@@ -7,28 +7,7 @@
     <link rel="stylesheet" href="css/styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-    <style>
-        .hero-title {
-            font-size: clamp(1.8rem, 4vw, 2.8rem) !important;
-            white-space: normal;
-            line-height: 1.2;
-            max-width: 800px;
-        }
-       
-        .text-dim { color: rgba(255, 255, 255, 0.4); } /* Cinza para as palavras secundárias */
-        .text-highlight { color: #ffffff; } /* Branco para as palavras principais */
-
-        @media (max-width: 1024px) {
-            .hero-title { font-size: 2rem !important; }
-        }
-
-        /* Primeira letra dos títulos na sidebar em vermelho estiloso */
-        .nav-text::first-letter {
-            color: #e63946;
-            font-weight: 700;
-        }
-    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <canvas id="bg-canvas"></canvas>
@@ -40,7 +19,7 @@
     <nav class="sidebar" id="sidebar">
         <div class="sidebar-header">
             <div class="logo">LUCAS R <span class="tech-span">TECH</span></div>
-            <div style="font-family: var(--font-mono); font-size: 0.6rem; color: var(--text-muted); padding-left: 0,8px; margin-top: -4px; letter-spacing: 0,5px;">Cnpj: 64.297.509/0001-20</div>
+            <div class="cnpj-text">Cnpj: 64.297.509/0001-20</div>
             
             <div class="tagline">
                 <p>Tecnologia da Informação</p>
@@ -51,7 +30,7 @@
 
         <div class="nav-container">
             <div class="nav-group">
-                <span class="nav-group-title">Navegação</span>
+                <span class="nav-group-title">Navegação Principal</span>
                 <ul class="nav-menu">
                     <li class="nav-item">
                         <a href="#home" class="nav-link active">
@@ -60,15 +39,27 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="#comercial" class="nav-link">
+                        <a href="#ai-tools" class="nav-link">
                             <span class="nav-icon"></span>
-                            <span class="nav-text">Utilidades Comerciais & Web</span>
+                            <span class="nav-text">Inteligência Artificial</span>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="#learning" class="nav-link">
+                        <a href="#roadmaps" class="nav-link">
                             <span class="nav-icon"></span>
-                            <span class="nav-text">Aprendizado</span>
+                            <span class="nav-text">Roadmaps & Estudos</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#comercial" class="nav-link">
+                            <span class="nav-icon"></span>
+                            <span class="nav-text">Utilidades Comerciais</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#security" class="nav-link">
+                            <span class="nav-icon"></span>
+                            <span class="nav-text">Segurança & Privacidade</span>
                         </a>
                     </li>
                     <li class="nav-item">
@@ -112,8 +103,8 @@
                     <span class="text-dim">Entretenimento</span> <span class="text-highlight">sem limites.</span>
                 </h1>
                 
-                <div class="hero-intro" style="margin-top: 1.2rem; max-width: 650px; color: var(--text-secondary); font-size: 1.1rem; line-height: 1.8; font-family: var(--font-primary);">
-                    <p>Pensando em reunir interesses e ajudar os usuários, aqui eu reuni o "creme de la creme" da internet: ferramentas avançadas para otimizar seu trabalho, inteligência artificial para criar gráficos e documentos, além de um arsenal completo de filmes e jogos. Algumas ferramentas vão funcionar melhor no desktop.</p>
+                <div class="hero-intro">
+                    <p>Pensando em reunir interesses e elevar o potencial de desenvolvedores e usuários avançados, consolidei o arsenal definitivo da internet. Desde inteligência artificial de ponta e roadmaps de estudo verificados, até soluções de produtividade comercial, segurança cibernética e entretenimento multimídia. Otimize sua jornada tecnológica em um único hub.</p>
                 </div>
             </div>
         </section>
@@ -121,99 +112,134 @@
         <section id="arsenal-content" class="section">
             <div class="container">
                 <div class="arsenal-grid">
-                    <div id="comercial" class="expand-card">
+
+                    <!-- NOVA SESSÃO: Inteligência Artificial -->
+                    <div id="ai-tools" class="expand-card">
                         <div class="expand-header" onclick="toggleCard(this)">
-                            <div class="expand-icon"></div>
                             <div class="expand-title">
-                                <h3>Utilidades Comerciais & Web</h3>
-                                <p>IA, Design, Hospedagem e Produtividade.</p>
+                                <h3>Inteligência Artificial & Machine Learning</h3>
+                                <p>Modelos de linguagem, geradores visuais e motores de pesquisa avançados.</p>
                             </div>
                             <div class="expand-arrow">▼</div>
                         </div>
                         <div class="expand-content">
                             <div class="link-list">
-                                <a href="https://app.napkin.ai" target="_blank" class="link-item"><strong>Napkin AI</strong><span>Transforme textos simples em gráficos visuais explicativos.</span></a>
-                                <a href="https://lightpdf.com/tools" target="_blank" class="link-item"><strong>LightPDF</strong><span>Editor e conversor de PDF avançado online.</span></a>
-                                <a href="https://www.mybib.com/pt/ferramentas/gerador-referencias-abnt" target="_blank" class="link-item"><strong>MyBib (ABNT)</strong><span>Gerador automático de referências bibliográficas.</span></a>
-                                <a href="https://www.pacdora.com" target="_blank" class="link-item"><strong>Pacdora</strong><span>Crie embalagens 3D profissionais online.</span></a>
-                                <a href="https://infinityfree.com" target="_blank" class="link-item"><strong>InfinityFree</strong><span>Hospedagem de sites WordPress gratuita.</span></a>
-                                <a href="https://neapay.com" target="_blank" class="link-item"><strong>Neapay</strong><span>Gere cartões virtuais para testes de sistema.</span></a>
-                                <a href="https://imageeditor.online" target="_blank" class="link-item"><strong>ImageEditor.Online</strong><span>Edição de imagem com IA.</span></a>
-                                <a href="https://tinywow.com" target="_blank" class="link-item"><strong>TinyWow</strong><span>Várias ferramentas úteis online.</span></a>
+                                <a href="https://www.perplexity.ai" target="_blank" class="link-item"><strong>Perplexity AI</strong><span>Motor de busca focado em IA que cita fontes em tempo real. Excelente para pesquisa.</span></a>
+                                <a href="https://claude.ai" target="_blank" class="link-item"><strong>Claude (Anthropic)</strong><span>IA avançada com janela de contexto enorme. Superior para análise de código e documentos longos.</span></a>
+                                <a href="https://huggingface.co" target="_blank" class="link-item"><strong>Hugging Face</strong><span>O "GitHub" do Machine Learning. Modelos open-source, datasets e espaços de demonstração.</span></a>
+                                <a href="https://v0.dev" target="_blank" class="link-item"><strong>v0 by Vercel</strong><span>Gere interfaces de usuário completas (React/Tailwind) apenas com descrições em texto.</span></a>
                             </div>
                         </div>
                     </div>
 
-                    <div id="learning" class="expand-card">
+                    <!-- NOVA SESSÃO: Roadmaps & Estudos -->
+                    <div id="roadmaps" class="expand-card">
                         <div class="expand-header" onclick="toggleCard(this)">
-                            <div class="expand-icon"></div>
                             <div class="expand-title">
-                                <h3>Aprendizado</h3>
-                                <p>Domine a programação com plataformas interativas.</p>
+                                <h3>Roadmaps & Estudos Definitivos</h3>
+                                <p>Rotas de aprendizado consolidadas para dominar engenharia de software.</p>
                             </div>
                             <div class="expand-arrow">▼</div>
                         </div>
                         <div class="expand-content">
                             <div class="link-list">
-                                <a href="https://codefinity.com/" target="_blank" class="link-item"><strong>Codefinity</strong><span>Cursos práticos de Python e Tech.</span></a>
-                                <a href="https://coddy.tech/onboard" target="_blank" class="link-item"><strong>Coddy.tech</strong><span>Aprenda programação de forma gamificada.</span></a>
-                                <a href="https://github.com/BrasilAPI/BrasilAPI" target="_blank" class="link-item"><strong>BrasilAPI</strong><span>Repositório com APIs brasileiras.</span></a>
-                                <a href="https://github.com/Wmitrut/awesome-brazilian-devblogs" target="_blank" class="link-item"><strong>Awesome Brazilian DevBlogs</strong><span>Blogs técnicos brasileiros.</span></a>
-                                <a href="https://github.com/brazilian-utils" target="_blank" class="link-item"><strong>Brazilian Utils</strong><span>Bibliotecas e utilitários brasileiros.</span></a>
+                                <a href="https://roadmap.sh" target="_blank" class="link-item"><strong>Roadmap.sh</strong><span>Rotas visuais e guiadas por especialistas para qualquer carreira em tecnologia (Frontend, Backend, DevOps).</span></a>
+                                <a href="https://developer.mozilla.org/pt-BR/" target="_blank" class="link-item"><strong>MDN Web Docs</strong><span>A documentação mais respeitada e completa para tecnologias web (HTML, CSS, JS).</span></a>
+                                <a href="https://www.freecodecamp.org/portuguese/" target="_blank" class="link-item"><strong>FreeCodeCamp</strong><span>Aprenda a programar com milhares de horas de conteúdo gratuito e projetos práticos.</span></a>
+                                <a href="https://refactoring.guru/pt-br" target="_blank" class="link-item"><strong>Refactoring Guru</strong><span>Aprenda padrões de projeto (Design Patterns) e refatoração de código com ilustrações brilhantes.</span></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="comercial" class="expand-card">
+                        <div class="expand-header" onclick="toggleCard(this)">
+                            <div class="expand-title">
+                                <h3>Utilidades Comerciais & Web</h3>
+                                <p>Hospedagem, geração de conteúdo e ferramentas para o dia a dia.</p>
+                            </div>
+                            <div class="expand-arrow">▼</div>
+                        </div>
+                        <div class="expand-content">
+                            <div class="link-list">
+                                <a href="https://app.napkin.ai" target="_blank" class="link-item"><strong>Napkin AI</strong><span>Transforme textos simples em gráficos visuais explicativos instantaneamente.</span></a>
+                                <a href="https://lightpdf.com/tools" target="_blank" class="link-item"><strong>LightPDF</strong><span>Editor, conversor e compressor de PDF online de alta eficiência.</span></a>
+                                <a href="https://www.mybib.com/pt/ferramentas/gerador-referencias-abnt" target="_blank" class="link-item"><strong>MyBib (ABNT)</strong><span>Geração automatizada de referências bibliográficas para trabalhos acadêmicos.</span></a>
+                                <a href="https://www.pacdora.com" target="_blank" class="link-item"><strong>Pacdora</strong><span>Plataforma online para criação e renderização de embalagens 3D profissionais.</span></a>
+                                <a href="https://infinityfree.com" target="_blank" class="link-item"><strong>InfinityFree</strong><span>Hospedagem de sites com suporte a PHP e MySQL sem custos iniciais.</span></a>
+                                <a href="https://neapay.com" target="_blank" class="link-item"><strong>Neapay</strong><span>Geração de cartões de crédito virtuais para testes em gateways de pagamento.</span></a>
+                                <a href="https://imageeditor.online" target="_blank" class="link-item"><strong>ImageEditor.Online</strong><span>Edição de imagem baseada em navegador com suporte a recursos de IA.</span></a>
+                                <a href="https://tinywow.com" target="_blank" class="link-item"><strong>TinyWow</strong><span>Canivete suíço de utilitários para conversão e edição de arquivos variados.</span></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- NOVA SESSÃO: Segurança & Privacidade -->
+                    <div id="security" class="expand-card">
+                        <div class="expand-header" onclick="toggleCard(this)">
+                            <div class="expand-title">
+                                <h3>Segurança & Privacidade</h3>
+                                <p>Auditoria de vazamentos, análise de malwares e proteção de dados.</p>
+                            </div>
+                            <div class="expand-arrow">▼</div>
+                        </div>
+                        <div class="expand-content">
+                            <div class="link-list">
+                                <a href="https://haveibeenpwned.com" target="_blank" class="link-item"><strong>Have I Been Pwned</strong><span>Verifique se o seu e-mail ou número de telefone foi comprometido em vazamentos de dados.</span></a>
+                                <a href="https://www.virustotal.com" target="_blank" class="link-item"><strong>VirusTotal</strong><span>Analise arquivos, domínios, IPs e URLs para detectar malwares usando mais de 70 antivírus.</span></a>
+                                <a href="https://proton.me" target="_blank" class="link-item"><strong>ProtonMail</strong><span>Serviço de e-mail suíço com criptografia de ponta a ponta para máxima privacidade.</span></a>
+                                <a href="https://10minutemail.com" target="_blank" class="link-item"><strong>10 Minute Mail</strong><span>Endereço de e-mail temporário descartável para evitar spam ao testar serviços.</span></a>
                             </div>
                         </div>
                     </div>
 
                     <div id="tools" class="expand-card">
                         <div class="expand-header" onclick="toggleCard(this)">
-                            <div class="expand-icon"></div>
                             <div class="expand-title">
                                 <h3>Ferramentas de Sistema</h3>
-                                <p>Configurações avançadas e manutenção do Windows.</p>
+                                <p>Scripts de automação, configurações avançadas e manutenção de SO.</p>
                             </div>
                             <div class="expand-arrow">▼</div>
                         </div>
                         <div class="expand-content">
                             <div class="link-list">
-                                <a href="https://github.com/massgravel/Microsoft-Activation-Scripts" target="_blank" class="link-item"><strong>Activation Scripts (MAS)</strong><span>Ativação segura de Windows e Office.</span></a>
-                                <div class="link-item"><strong>GodMode</strong><code>GodMode.{ED7BA470-8E54-465E-825C-99712043E01C}</code></div>
+                                <a href="https://github.com/massgravel/Microsoft-Activation-Scripts" target="_blank" class="link-item"><strong>Activation Scripts (MAS)</strong><span>Repositório open-source focado em métodos de ativação para produtos Microsoft.</span></a>
+                                <div class="link-item"><strong>GodMode (Windows)</strong><code style="display:block; margin-top:5px; background: rgba(0,0,0,0.3); padding: 5px; border-radius: 4px; font-family: var(--font-mono); font-size: 0.8rem; word-break: break-all;">GodMode.{ED7BA470-8E54-465E-825C-99712043E01C}</code><span>Crie uma pasta com este nome para acessar todas as configurações ocultas do Windows.</span></div>
                             </div>
                         </div>
                     </div>
 
                     <div id="streaming" class="expand-card">
                         <div class="expand-header" onclick="toggleCard(this)">
-                            <div class="expand-icon"></div>
                             <div class="expand-title">
                                 <h3>Streaming & Multimídia</h3>
-                                <p>Filmes, Torrents, Áudio e Efeitos.</p>
+                                <p>Clientes P2P, plataformas de mídia e bancos de áudio.</p>
                             </div>
                             <div class="expand-arrow">▼</div>
                         </div>
                         <div class="expand-content">
                             <div class="link-list">
-                                <a href="https://deluge-torrent.org/download/" target="_blank" class="link-item"><strong>Deluge</strong><span>Cliente Torrent leve e sem anúncios.</span></a>
-                                <a href="https://gratistorrent.com" target="_blank" class="link-item"><strong>GratisTorrent</strong><span>Acervo de filmes em alta qualidade.</span></a>
-                                <a href="https://streamex.net" target="_blank" class="link-item"><strong>Streamex</strong><span>Plataforma de streaming universal.</span></a>
-                                <a href="https://www.gaiaflix.xyz" target="_blank" class="link-item"><strong>Gaiaflix</strong><span>Catálogo robusto de mídia e entretenimento.</span></a>
-                                <a href="https://www.myinstants.com/pt/index/br/" target="_blank" class="link-item"><strong>MyInstants</strong><span>Botões de efeitos sonoros virais.</span></a>
+                                <a href="https://deluge-torrent.org/download/" target="_blank" class="link-item"><strong>Deluge</strong><span>Cliente BitTorrent de código aberto, leve, seguro e totalmente livre de anúncios.</span></a>
+                                <a href="https://gratistorrent.com" target="_blank" class="link-item"><strong>GratisTorrent</strong><span>Repositório P2P atualizado de filmes e séries em alta definição.</span></a>
+                                <a href="https://streamex.net" target="_blank" class="link-item"><strong>Streamex</strong><span>Agregador universal de plataformas de streaming de vídeo.</span></a>
+                                <a href="https://www.gaiaflix.xyz" target="_blank" class="link-item"><strong>Gaiaflix</strong><span>Catálogo independente para reprodução de entretenimento e mídia.</span></a>
+                                <a href="https://www.myinstants.com/pt/index/br/" target="_blank" class="link-item"><strong>MyInstants</strong><span>Maior soundboard colaborativo da internet. Efeitos sonoros para edição e transmissões.</span></a>
                             </div>
                         </div>
                     </div>
 
                     <div id="games" class="expand-card">
                         <div class="expand-header" onclick="toggleCard(this)">
-                            <div class="expand-icon"></div>
                             <div class="expand-title">
-                                <h3>Emuladores de Games Gratuitos</h3>
-                                <p>Títulos clássicos para jogar no navegador ou PC.</p>
+                                <h3>Emuladores de Games</h3>
+                                <p>Preservação de software e retrocomputação acessível via navegador.</p>
                             </div>
                             <div class="expand-arrow">▼</div>
                         </div>
                         <div class="expand-content">
                             <div class="link-list">
-                                <a href="https://romspure.cc" target="_blank" class="link-item"><strong>RomsPure</strong><span>Baixe jogos clássicos para emuladores.</span></a>
-                                <a href="https://myemulator.onl" target="_blank" class="link-item"><strong>My Emulator Online</strong><span>Jogue direto no navegador.</span></a>
+                                <a href="https://romspure.cc" target="_blank" class="link-item"><strong>RomsPure</strong><span>Acervo massivo para download de cópias de segurança de consoles clássicos.</span></a>
+                                <a href="https://myemulator.onl" target="_blank" class="link-item"><strong>My Emulator Online</strong><span>Motor de emulação otimizado em WebAssembly para jogar diretamente no navegador.</span></a>
+                                <a href="https://retroachievements.org" target="_blank" class="link-item"><strong>RetroAchievements</strong><span>Sistema de conquistas integrado a emuladores para reviver clássicos com desafios modernos.</span></a>
                             </div>
                         </div>
                     </div>
@@ -221,26 +247,25 @@
             </div>
         </section>
 
-<section id="contact" class="section">
-    <div class="container">
-        <div class="contact-card">
-            <h2 style="margin-bottom: 0.5rem; color: #fff;">Dúvidas ou Sugestões?</h2>
-            <p style="color: var(--text-secondary); margin-bottom: 2rem; font-size: 0.95rem;">Precisa de ajuda com alguma ferramenta? Envie sua mensagem abaixo.</p>
-            <form id="contactForm" action="https://formspree.io/f/xvzbgwzp" method="POST">
-                <input type="text" name="nome" class="form-input" placeholder="Seu Nome" required>
-                <input type="email" name="email" class="form-input" placeholder="Seu E-mail" required>
-                <textarea name="mensagem" class="form-input" placeholder="Como posso ajudar?" rows="4" required></textarea>
-                <button type="submit" class="btn btn-primary">Enviar Mensagem</button>
-            </form>
-        </div>
-    </div>
-</section>
-
+        <section id="contact" class="section">
+            <div class="container">
+                <div class="contact-card">
+                    <h2 class="contact-title">Dúvidas ou Sugestões?</h2>
+                    <p class="contact-desc">Precisa de ajuda com alguma ferramenta ou tem recomendação de novo link? Envie sua mensagem.</p>
+                    <form id="contactForm" action="https://formspree.io/f/xvzbgwzp" method="POST">
+                        <input type="text" name="nome" class="form-input" placeholder="Identificação (Nome ou Nickname)" required>
+                        <input type="email" name="email" class="form-input" placeholder="Endereço de E-mail" required>
+                        <textarea name="mensagem" class="form-input" placeholder="Descreva sua solicitação com clareza..." rows="5" required></textarea>
+                        <button type="submit" class="btn-primary">Transmitir Mensagem</button>
+                    </form>
+                </div>
+            </div>
+        </section>
 
         <footer class="footer">
             <div class="container">
                 <div class="footer-logo">LUCAS R <span>TECH</span></div>
-                <p>© 2024 Lucas R Tech. Todos os direitos reservados.</p>
+                <p>© 2026 Lucas R Tech. Infraestrutura e curadoria de dados. Todos os direitos reservados.</p>
             </div>
         </footer>
     </main>
